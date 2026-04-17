@@ -3,10 +3,12 @@ from flask import request
 from model import Category
 from model.product import Product
 from .func_ import *
+from flask_jwt_extended import (jwt_required)
 
 
 # select all product RAW SQL function
 @app.get('/product/list')
+@jwt_required()
 def product_list():
     sql = text("""
         SELECT p.*, c.name AS category_name, c.image AS category_image
@@ -20,6 +22,7 @@ def product_list():
 
 # select product by id product RAW SQL function
 @app.get('/product/list-by-id/<int:product_id>')
+@jwt_required()
 def product_by_id(product_id):
     result = get_product_by_id(product_id)
     return result
@@ -27,6 +30,7 @@ def product_by_id(product_id):
 
 # create product use ORM
 @app.post('/product/create')
+@jwt_required()
 def create_product():
     form = request.get_json(silent=True) or request.form
     file = request.files.get('image')
@@ -86,6 +90,7 @@ def create_product():
 
 # update product use ORM
 @app.post('/product/update')
+@jwt_required()
 def update_product():
     form = request.get_json(silent=True) or request.form
     if not form:
@@ -95,6 +100,7 @@ def update_product():
         product_id = int(form.get('product_id') or 0)
     except:
         return {"error": "invalid product id"}, 400
+
     name = form.get('name')
     category_id = form.get('category_id')
     cost = form.get('cost')
@@ -115,6 +121,7 @@ def update_product():
         category_id = int(category_id)
     except:
         return {"error": "invalid category id"}, 400
+
     category = Category.query.get(category_id)
     if not category:
         return {"error": "category not found"}, 400
@@ -147,6 +154,7 @@ def update_product():
 
 # delete product use ORM
 @app.post('/product/delete')
+@jwt_required()
 def delete_product():
     form = request.get_json(silent=True)
     if not form.get('product_id'):

@@ -1,10 +1,12 @@
 from flask import request
 from sqlalchemy import text
 from app import app, db
+from flask_jwt_extended import (jwt_required)
 
 
 # daily
 @app.get("/report/sales/daily")
+@jwt_required()
 def report_daily():
     sql = text("""
         SELECT DATE(i.created_at) as date, SUM(d.total) as total_sales
@@ -19,6 +21,7 @@ def report_daily():
 
 # weekly
 @app.get("/report/sales/weekly")
+@jwt_required()
 def report_weekly():
     sql = text("""
         SELECT strftime('%Y-%W', i.created_at)
@@ -34,6 +37,7 @@ def report_weekly():
 
 # monthly
 @app.get("/report/sales/monthly")
+@jwt_required()
 def report_monthly():
     sql = text("""
         SELECT strftime('%Y-%m', i.created_at) as month, SUM(d.total) as total_sales
@@ -48,6 +52,7 @@ def report_monthly():
 
 # sale by criteria
 @app.get("/report/sales/by")
+@jwt_required()
 def report_by():
     # Get query parameter safely and normalize it
     sale_by = request.args.get("type", "").strip().lower()

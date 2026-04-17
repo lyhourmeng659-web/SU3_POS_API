@@ -2,10 +2,12 @@ from flask import request
 from app import app, db
 from model.invoice import Invoice
 from model.invoice_detail import InvoiceDetail
+from flask_jwt_extended import (jwt_required)
 
 
 # create invoice
 @app.post("/invoice/create")
+@jwt_required()
 def create_invoice():
     data = request.get_json(silent=True) or request.form
     if not data:
@@ -30,6 +32,7 @@ def create_invoice():
 
 # view invoice list
 @app.get("/invoice/list")
+@jwt_required()
 def list_invoices():
     invoices = Invoice.query.order_by(Invoice.created_at.desc()).all()
     return [inv.to_dict() for inv in invoices], 200
@@ -37,6 +40,7 @@ def list_invoices():
 
 # view invoice by id (with details)
 @app.get("/invoice/list-by-id/<int:invoice_id>")
+@jwt_required()
 def get_invoice(invoice_id):
     invoice = Invoice.query.get(invoice_id)
     if not invoice:
@@ -46,6 +50,7 @@ def get_invoice(invoice_id):
 
 # delete invoice
 @app.delete("/invoice/delete/<int:invoice_id>")
+@jwt_required()
 def delete_invoice(invoice_id):
     invoice = Invoice.query.get(invoice_id)
     if not invoice:

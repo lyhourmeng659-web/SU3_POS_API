@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from flask_jwt_extended import jwt_manager, JWTManager
+from flask_jwt_extended import JWTManager
 from datetime import timedelta
 
 app = Flask(__name__)
@@ -24,7 +24,6 @@ import model
 
 # Routes
 import routes
-
 
 if __name__ == '__main__':
     app.run()

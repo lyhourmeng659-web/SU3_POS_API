@@ -3,10 +3,12 @@ from app import app, db
 from model.invoice import Invoice
 from model.invoice_detail import InvoiceDetail
 from model.product import Product
+from flask_jwt_extended import (jwt_required)
 
 
 # create sale (invoice detail)
 @app.post("/invoice_detail/create")
+@jwt_required()
 def create_invoice_detail():
     data = request.get_json(silent=True) or request.form
     if not data:
@@ -41,6 +43,7 @@ def create_invoice_detail():
 
 # update sale detail
 @app.post("/invoice_detail/update")
+@jwt_required()
 def update_invoice_detail():
     data = request.get_json(silent=True) or request.form
     if not data:
@@ -67,10 +70,12 @@ def update_invoice_detail():
 
 # delete sale detail
 @app.delete("/invoice_detail/delete/<int:detail_id>")
+@jwt_required()
 def delete_invoice_detail(detail_id):
     detail = InvoiceDetail.query.get(detail_id)
     if not detail:
         return {"error": "Detail not found"}, 404
+
     db.session.delete(detail)
     db.session.commit()
     return {"message": "Sale detail deleted"}, 200

@@ -2,10 +2,12 @@ from app import app, db
 from flask import request
 from model.category import Category
 from .func_ import *
+from flask_jwt_extended import (jwt_required)
 
 
 # select all category use RAW SQL
 @app.get('/category/list')
+@jwt_required()
 def category():
     sql = text("""
                 SELECT * FROM categories
@@ -17,6 +19,7 @@ def category():
 
 # select category by id category RAW SQL function
 @app.get('/category/list-by-id/<int:category_id>')
+@jwt_required()
 def category_by_id(category_id):
     result = get_category_by_id(category_id)
     return result
@@ -24,6 +27,7 @@ def category_by_id(category_id):
 
 # create category use ORM
 @app.post('/category/create')
+@jwt_required()
 def create_category(category_id=None):
     form = request.get_json(silent=True) or request.form
     file = request.files.get('image')
@@ -45,17 +49,13 @@ def create_category(category_id=None):
     if not form.get('name'):
         return {"error": "category name is missing"}, 400
 
-    # create new user record
+    # create new category record
     category_name = form.get('name')
 
-    # validation user already exists in user table
+    # validation category already exists in category table
     existing_category = Category.query.filter_by(name=category_name).first()
     if existing_category and existing_category.id != category_id:
         return {"error": "category already exists"}, 400
-
-    # existing_category = Category.query.filter_by(name=category_name).first()
-    # if existing_category:
-    #     return {"error": "category already exists"}, 400
 
     category = Category(
         name=category_name,
@@ -73,6 +73,7 @@ def create_category(category_id=None):
 
 # delete category use ORM
 @app.post('/category/delete')
+@jwt_required()
 def delete_category():
     form = request.get_json(silent=True)
     if not form.get('category_id'):
@@ -96,6 +97,7 @@ def delete_category():
 
 # update category use ORM
 @app.post('/category/update')
+@jwt_required()
 def update_category():
     form = request.get_json(silent=True) or request.form
     if not form:
@@ -115,7 +117,7 @@ def update_category():
     category_id = form.get('category_id')
     category_name = form.get('name')
 
-    # validation user already exists in user table
+    # validation user already exists in category table
     existing_category = Category.query.filter_by(name=category_name).first()
     if existing_category and existing_category.id != category_id:
         return {"error": "category already exists"}, 400
@@ -136,5 +138,5 @@ def update_category():
     db.session.commit()
     return {
         "message": "Category updated successfully",
-        "user_id": get_category_by_id(category_id
+        "category_id": get_category_by_id(category_id
                                   )}, 200

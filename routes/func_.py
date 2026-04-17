@@ -77,6 +77,7 @@ def watermark_image(image_path, watermark_text="© MENG-LYHOUR"):
         draw = ImageDraw.Draw(watermark_layer)
 
         font_size = max(20, int(min(img.size) / 15))
+
         try:
             font = ImageFont.truetype("arial.ttf", font_size)
         except:
@@ -85,9 +86,9 @@ def watermark_image(image_path, watermark_text="© MENG-LYHOUR"):
         bbox = draw.textbbox((0, 0), watermark_text, font=font)
         text_width = bbox[2] - bbox[0]
         text_height = bbox[3] - bbox[1]
-
         x = img.size[0] - text_width - 30
         y = img.size[1] - text_height - 30
         draw.text((x, y), watermark_text, font=font, fill=(255, 255, 255, 200))
+
         watermarked = Image.alpha_composite(img, watermark_layer).convert("RGB")
         watermarked.save(image_path, "JPEG")

@@ -1,0 +1,1587 @@
+{
+  "info": {
+    "_postman_id": "ca5f32df-234f-4ef5-b245-b2b5fc3748d1",
+    "name": "SU3_POS_API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48881453",
+    "_collection_link": "https://go.postman.co/collection/48881453-ca5f32df-234f-4ef5-b245-b2b5fc3748d1?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "user",
+      "item": [
+        {
+          "name": "update",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text",
+                "disabled": true
+              },
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user_id",
+                  "value": "2",
+                  "type": "text",
+                  "uuid": "f4a8b0cd-df91-42c7-a5a5-aa93a486a378"
+                },
+                {
+                  "key": "user_name",
+                  "value": "Oul Rangsey",
+                  "type": "text",
+                  "uuid": "4886c6de-0563-4322-b3af-98e1c437400b"
+                },
+                {
+                  "key": "profile",
+                  "type": "file",
+                  "uuid": "ba8d9247-d78e-476a-a663-a5ab5b6f34bd",
+                  "value": null
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/user/update",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "user",
+                "update"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"user_id\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/user/delete",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "user",
+                "delete"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "select_all",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/user/list",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "user",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "select_by_id",
+          "protocolProfileBehavior": {
+            "disabledSystemHeaders": {}
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/user/list-by-id/2",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "user",
+                "list-by-id",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Insert",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user_name",
+                  "value": "Kheav Sarath",
+                  "type": "text",
+                  "uuid": "32f936c1-0951-4378-85a4-b8c878425a12"
+                },
+                {
+                  "key": "password",
+                  "value": "123456789",
+                  "type": "text",
+                  "uuid": "9bdf48c9-c764-43fd-8e61-cb8e5632221c"
+                },
+                {
+                  "key": "profile",
+                  "type": "file",
+                  "uuid": "741001b9-d5fe-4310-b94d-d5580ea04266",
+                  "value": null
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/user/create",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "user",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"user_name\": \"Meng Lyhour\",\r\n    \"password\": \"12345678910\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/login",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "protected",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5NzUxNywianRpIjoiNWI2YTAxMTMtYmQ5MC00Zjc0LWE1OGEtZWMwZWRkYzI0N2I1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTc1MTcsImNzcmYiOiI3MGRiYjJkYS1jMzIxLTQ1M2ItYmM4YS0yNWVlNTVhZWM2ZWUiLCJleHAiOjE3NzYzOTkzMTcsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.5QxyIESMNgZM3GEGnZEKn6phGomUif1xFyB-qF0r4S4",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/protected",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "protected"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_me",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5NzUxNywianRpIjoiNWI2YTAxMTMtYmQ5MC00Zjc0LWE1OGEtZWMwZWRkYzI0N2I1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTc1MTcsImNzcmYiOiI3MGRiYjJkYS1jMzIxLTQ1M2ItYmM4YS0yNWVlNTVhZWM2ZWUiLCJleHAiOjE3NzYzOTkzMTcsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.5QxyIESMNgZM3GEGnZEKn6phGomUif1xFyB-qF0r4S4",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/logout",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "product",
+      "item": [
+        {
+          "name": "select_all",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5NzYyOCwianRpIjoiNTA2MWMyMGQtOWU4MC00NTBlLWFiNjktNzVlMWNlNmUwYTI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTc2MjgsImNzcmYiOiJhODhhNjM5NC01ZGEyLTQzZjctYWY1NC1lNWJhYmE5MWYwYjciLCJleHAiOjE3NzYzOTk0MjgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.FCejdcii8-bPVGNJ9SrYJs1-LNVVdIPQqDnhzZtjtHY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:5000/product/list",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "product",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "select_by_id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5NzYyOCwianRpIjoiNTA2MWMyMGQtOWU4MC00NTBlLWFiNjktNzVlMWNlNmUwYTI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTc2MjgsImNzcmYiOiJhODhhNjM5NC01ZGEyLTQzZjctYWY1NC1lNWJhYmE5MWYwYjciLCJleHAiOjE3NzYzOTk0MjgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.FCejdcii8-bPVGNJ9SrYJs1-LNVVdIPQqDnhzZtjtHY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:5000/product/list-by-id/2",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "product",
+                "list-by-id",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Insert",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5NzYyOCwianRpIjoiNTA2MWMyMGQtOWU4MC00NTBlLWFiNjktNzVlMWNlNmUwYTI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTc2MjgsImNzcmYiOiJhODhhNjM5NC01ZGEyLTQzZjctYWY1NC1lNWJhYmE5MWYwYjciLCJleHAiOjE3NzYzOTk0MjgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.FCejdcii8-bPVGNJ9SrYJs1-LNVVdIPQqDnhzZtjtHY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "MSI katana",
+                  "type": "text",
+                  "uuid": "25d7bbbc-a883-40df-807b-ba68c6fc770b"
+                },
+                {
+                  "key": "category_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "ebb9a358-3465-43b0-825d-4d4bff2b1f10"
+                },
+                {
+                  "key": "cost",
+                  "value": "8",
+                  "type": "text",
+                  "uuid": "1e195135-566e-43f3-8c96-5ebf0cfe4201"
+                },
+                {
+                  "key": "price",
+                  "value": "1200",
+                  "type": "text",
+                  "uuid": "9aec7f86-d757-4066-b654-17470555a40d"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "0becb103-c598-4753-b737-4a014c9b86ad",
+                  "src": "/C:/Users/User/Pictures/MSI1.png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/product/create",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "product",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5ODg1OCwianRpIjoiMTMzYWMwMWEtYWNhYy00YjE0LWFkNGMtMGEzMTYyYjZlODczIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTg4NTgsImNzcmYiOiIyMWI4MTlmMS0xOWZkLTRkODUtOWRlOC02MzE1NTZiNGQ0ZWIiLCJleHAiOjE3NzY0MDA2NTgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.7aKKdgUyfDexNIeBql-Mv8VKwKz__lFS3dU7KLoEk-0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"product_id\": 3\r\n}"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/product/delete",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "product",
+                "delete"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5NzYyOCwianRpIjoiNTA2MWMyMGQtOWU4MC00NTBlLWFiNjktNzVlMWNlNmUwYTI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTc2MjgsImNzcmYiOiJhODhhNjM5NC01ZGEyLTQzZjctYWY1NC1lNWJhYmE5MWYwYjciLCJleHAiOjE3NzYzOTk0MjgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.FCejdcii8-bPVGNJ9SrYJs1-LNVVdIPQqDnhzZtjtHY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "product_id",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "27b1571f-a646-4489-a728-cfc9173f3133"
+                },
+                {
+                  "key": "name",
+                  "value": "MSI-KATANA",
+                  "type": "text",
+                  "uuid": "c562aac5-ddfc-441e-b89a-3fd48aa8e4c0"
+                },
+                {
+                  "key": "category_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "32649acc-08ab-4ae0-bca3-a0e6cdd05901"
+                },
+                {
+                  "key": "cost",
+                  "value": "10",
+                  "type": "text",
+                  "uuid": "925e9686-687e-4933-9da5-54039ffcc9c0"
+                },
+                {
+                  "key": "price",
+                  "value": "1200",
+                  "type": "text",
+                  "uuid": "4098c06c-65b1-43ed-844e-e4f9bf7ea73a"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "f8a7e226-cd46-4997-af0a-478009c9969a",
+                  "src": [
+                    "/C:/Users/User/Pictures/MSI1.png",
+                    "/C:/Users/User/Pictures/MSI1.png"
+                  ]
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/product/update",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "product",
+                "update"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "category",
+      "item": [
+        {
+          "name": "select_all",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5NzYyOCwianRpIjoiNTA2MWMyMGQtOWU4MC00NTBlLWFiNjktNzVlMWNlNmUwYTI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTc2MjgsImNzcmYiOiJhODhhNjM5NC01ZGEyLTQzZjctYWY1NC1lNWJhYmE5MWYwYjciLCJleHAiOjE3NzYzOTk0MjgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.FCejdcii8-bPVGNJ9SrYJs1-LNVVdIPQqDnhzZtjtHY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:5000/category/list",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "category",
+                "list"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "select_by_id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5NzYyOCwianRpIjoiNTA2MWMyMGQtOWU4MC00NTBlLWFiNjktNzVlMWNlNmUwYTI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTc2MjgsImNzcmYiOiJhODhhNjM5NC01ZGEyLTQzZjctYWY1NC1lNWJhYmE5MWYwYjciLCJleHAiOjE3NzYzOTk0MjgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.FCejdcii8-bPVGNJ9SrYJs1-LNVVdIPQqDnhzZtjtHY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:5000/category/list-by-id/3",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "category",
+                "list-by-id",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Insert",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5NzYyOCwianRpIjoiNTA2MWMyMGQtOWU4MC00NTBlLWFiNjktNzVlMWNlNmUwYTI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTc2MjgsImNzcmYiOiJhODhhNjM5NC01ZGEyLTQzZjctYWY1NC1lNWJhYmE5MWYwYjciLCJleHAiOjE3NzYzOTk0MjgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.FCejdcii8-bPVGNJ9SrYJs1-LNVVdIPQqDnhzZtjtHY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Dell",
+                  "type": "text",
+                  "uuid": "8ecda658-5988-4818-8c7f-e8368d96389c"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "496a5e20-19d6-4f5c-b41a-c2ff33979e89",
+                  "src": "/C:/Users/User/Pictures/sea.png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/category/create",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "category",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5NzYyOCwianRpIjoiNTA2MWMyMGQtOWU4MC00NTBlLWFiNjktNzVlMWNlNmUwYTI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTc2MjgsImNzcmYiOiJhODhhNjM5NC01ZGEyLTQzZjctYWY1NC1lNWJhYmE5MWYwYjciLCJleHAiOjE3NzYzOTk0MjgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.FCejdcii8-bPVGNJ9SrYJs1-LNVVdIPQqDnhzZtjtHY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"category_id\": 3\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/category/delete",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "category",
+                "delete"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5NzYyOCwianRpIjoiNTA2MWMyMGQtOWU4MC00NTBlLWFiNjktNzVlMWNlNmUwYTI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTc2MjgsImNzcmYiOiJhODhhNjM5NC01ZGEyLTQzZjctYWY1NC1lNWJhYmE5MWYwYjciLCJleHAiOjE3NzYzOTk0MjgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.FCejdcii8-bPVGNJ9SrYJs1-LNVVdIPQqDnhzZtjtHY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "category_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "e821b9d4-718c-4a1a-bcc4-e001576b6384"
+                },
+                {
+                  "key": "name",
+                  "value": "MSI",
+                  "type": "text",
+                  "uuid": "b90ed6ce-4eef-42b0-a4f8-7630dc777ae4"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "uuid": "5a101948-0e13-4d12-ac1f-ec34e191b1f4",
+                  "src": "/D:/Image_flask_test/MSI.png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/category/update",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "category",
+                "update"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "invoice",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5ODg1OCwianRpIjoiMTMzYWMwMWEtYWNhYy00YjE0LWFkNGMtMGEzMTYyYjZlODczIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTg4NTgsImNzcmYiOiIyMWI4MTlmMS0xOWZkLTRkODUtOWRlOC02MzE1NTZiNGQ0ZWIiLCJleHAiOjE3NzY0MDA2NTgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.7aKKdgUyfDexNIeBql-Mv8VKwKz__lFS3dU7KLoEk-0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "invoice_no",
+                  "value": "INV004",
+                  "type": "text",
+                  "uuid": "bb00702a-7991-4fc5-a373-23f83cccc88b"
+                },
+                {
+                  "key": "customer_name",
+                  "value": "kheav Sarath",
+                  "type": "text",
+                  "uuid": "cd333786-e8be-4830-ac55-d092224a2412"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/invoice/create",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "invoice",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "view",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5ODg1OCwianRpIjoiMTMzYWMwMWEtYWNhYy00YjE0LWFkNGMtMGEzMTYyYjZlODczIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTg4NTgsImNzcmYiOiIyMWI4MTlmMS0xOWZkLTRkODUtOWRlOC02MzE1NTZiNGQ0ZWIiLCJleHAiOjE3NzY0MDA2NTgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.7aKKdgUyfDexNIeBql-Mv8VKwKz__lFS3dU7KLoEk-0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:5000/invoice/list",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "invoice",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "view_by_id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5ODg1OCwianRpIjoiMTMzYWMwMWEtYWNhYy00YjE0LWFkNGMtMGEzMTYyYjZlODczIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTg4NTgsImNzcmYiOiIyMWI4MTlmMS0xOWZkLTRkODUtOWRlOC02MzE1NTZiNGQ0ZWIiLCJleHAiOjE3NzY0MDA2NTgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.7aKKdgUyfDexNIeBql-Mv8VKwKz__lFS3dU7KLoEk-0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:5000/invoice/list-by-id/4",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "invoice",
+                "list-by-id",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5ODg1OCwianRpIjoiMTMzYWMwMWEtYWNhYy00YjE0LWFkNGMtMGEzMTYyYjZlODczIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTg4NTgsImNzcmYiOiIyMWI4MTlmMS0xOWZkLTRkODUtOWRlOC02MzE1NTZiNGQ0ZWIiLCJleHAiOjE3NzY0MDA2NTgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.7aKKdgUyfDexNIeBql-Mv8VKwKz__lFS3dU7KLoEk-0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000//invoice/delete/2",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "",
+                "invoice",
+                "delete",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "invoice detail",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5ODg1OCwianRpIjoiMTMzYWMwMWEtYWNhYy00YjE0LWFkNGMtMGEzMTYyYjZlODczIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTg4NTgsImNzcmYiOiIyMWI4MTlmMS0xOWZkLTRkODUtOWRlOC02MzE1NTZiNGQ0ZWIiLCJleHAiOjE3NzY0MDA2NTgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.7aKKdgUyfDexNIeBql-Mv8VKwKz__lFS3dU7KLoEk-0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "invoice_id",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "0a29ca6d-1af7-424c-b79a-449c3719b02e"
+                },
+                {
+                  "key": "product_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "8056f775-93ae-4837-aed2-203408587621"
+                },
+                {
+                  "key": "qty",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "66df260b-37c6-4e5f-8d36-a32215feda86"
+                },
+                {
+                  "key": "price",
+                  "value": "700",
+                  "type": "text",
+                  "uuid": "8d67fa0b-f9e7-4dfe-96a0-9136587b7026"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/invoice_detail/create",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "invoice_detail",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5OTgyOCwianRpIjoiNWY5NDczNzMtNzAzMi00ZTYxLWEzODctZWQ1NzQzOGM5NTgwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTk4MjgsImNzcmYiOiIwMDkyZWE1MS04MTllLTRkYzMtYjQ1OC04MDA1OTAzNDRkZjgiLCJleHAiOjE3NzY0MDE2MjgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.428XCqdLg65_w0wSCpVT01IBZQEnc8j-StDEeZ5eif0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "invoice_id",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "fa494b17-d2ea-4295-96bb-fc0d48f960ee"
+                },
+                {
+                  "key": "product_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "1ecd6138-c599-4948-8660-c00bbe2f1f8b"
+                },
+                {
+                  "key": "qty",
+                  "value": "5",
+                  "type": "text",
+                  "uuid": "6644b63c-f336-4a2f-8eb6-87b71a0508b7"
+                },
+                {
+                  "key": "price",
+                  "value": "700",
+                  "type": "text",
+                  "uuid": "e428216d-c30c-400b-a744-5e5379a02819"
+                },
+                {
+                  "key": "id",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "daa09c32-dc38-4d34-9cf5-5d2d584d6974"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:5000/invoice_detail/update",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "invoice_detail",
+                "update"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjM5OTgyOCwianRpIjoiNWY5NDczNzMtNzAzMi00ZTYxLWEzODctZWQ1NzQzOGM5NTgwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzYzOTk4MjgsImNzcmYiOiIwMDkyZWE1MS04MTllLTRkYzMtYjQ1OC04MDA1OTAzNDRkZjgiLCJleHAiOjE3NzY0MDE2MjgsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.428XCqdLg65_w0wSCpVT01IBZQEnc8j-StDEeZ5eif0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:5000/invoice_detail/delete/4",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "invoice_detail",
+                "delete",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "report",
+      "item": [
+        {
+          "name": "daily",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:5000/report/sales/daily",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "report",
+                "sales",
+                "daily"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "weekly",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjQwNTI5NSwianRpIjoiMDMxMjI2MjYtZTdjNS00NDQ2LWI3NWMtZjJiODAyMThjZDExIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzY0MDUyOTUsImNzcmYiOiI4YWZlNjAzNy0zY2Q4LTRjODktYTFjMy03YTdhYzE2MDRhOTAiLCJleHAiOjE3NzY0MDcwOTUsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.lLUuykx7AOFJIkllhKyTevH7clpmKS1HqVd2e7wu0nE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:5000/report/sales/weekly",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "report",
+                "sales",
+                "weekly"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "monthly",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjQwNTI5NSwianRpIjoiMDMxMjI2MjYtZTdjNS00NDQ2LWI3NWMtZjJiODAyMThjZDExIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzY0MDUyOTUsImNzcmYiOiI4YWZlNjAzNy0zY2Q4LTRjODktYTFjMy03YTdhYzE2MDRhOTAiLCJleHAiOjE3NzY0MDcwOTUsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.lLUuykx7AOFJIkllhKyTevH7clpmKS1HqVd2e7wu0nE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:5000/report/sales/monthly",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "report",
+                "sales",
+                "monthly"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "sale_by_criteria",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc3NjQwNTI5NSwianRpIjoiMDMxMjI2MjYtZTdjNS00NDQ2LWI3NWMtZjJiODAyMThjZDExIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjEiLCJuYmYiOjE3NzY0MDUyOTUsImNzcmYiOiI4YWZlNjAzNy0zY2Q4LTRjODktYTFjMy03YTdhYzE2MDRhOTAiLCJleHAiOjE3NzY0MDcwOTUsInVzZXJfbmFtZSI6Ik1lbmcgTHlob3VyIiwicHJvZmlsZSI6Ik1lbmdMeWhvdXIuSlBHIn0.lLUuykx7AOFJIkllhKyTevH7clpmKS1HqVd2e7wu0nE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:5000/report/sales/by?type=product",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "5000",
+              "path": [
+                "report",
+                "sales",
+                "by"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "product"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

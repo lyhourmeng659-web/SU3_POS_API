@@ -84,14 +84,15 @@ def create_user():
 # delete user use ORM
 @app.post('/user/delete')
 def delete_user():
-    form = request.get_json(silent=True)
+    form = request.get_json(silent=True) or request.form
+
     if not form.get('user_id'):
         return {"error": "user id is missing"}, 400
 
     # error when user not found
     is_existing = get_user_by_id(form.get('user_id'))
     if is_existing.get('error'):
-        return {"error": "user not found "}, 400
+        return {"error": "user not found"}, 400
 
     user_id = form.get('user_id')
     user = User.query.get(user_id)
