@@ -11,11 +11,11 @@ Features
     Update:
     Delete:
 
-1.1. Auth
-    Register: Create a new user account.
-    Login: Authenticate users and issue access tokens.
-    Logout: Revoke user sessions or tokens.
-    Reset Password: Securely reset user passwords.
+    1.1. Auth
+        Register: Create a new user account.
+        Login: Authenticate users and issue access tokens.
+        Logout: Revoke user sessions or tokens.
+        Reset Password: Securely reset user passwords.
 
 1. Category Management
    List Categories: Retrieve all existing categories.
@@ -57,4 +57,3 @@ Submit
    Record Video Demo
    Send in telegram group's topic
    ** postman_collection **
-   ---]]
