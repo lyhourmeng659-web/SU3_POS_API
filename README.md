@@ -51,9 +51,3 @@ Technology Stack
    Database: MySQL / PostgresSQL / SQLite
    Authentication: JWT (JSON Web Token)
    Data Format: JSON-Postman
-   
-Submit
-   Project Source code upload to GitHub
-   Record Video Demo
-   Send in telegram group's topic
-   ** postman_collection **
